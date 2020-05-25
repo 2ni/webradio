@@ -1,0 +1,5 @@
+<div class="row stations">
+  {{#each stations as |station|}}
+  <a class="btn station {{#ifeq ../currentStation station.id}} select{{/ifeq}}" data-id="{{station.id}}" href="/select/{{station.id}}" title="{{station.name}}">{{station.name}}</a>
+  {{/each}}
+</div>

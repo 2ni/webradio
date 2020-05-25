@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="128x128" href="/radio-128.png">
+    <link rel="icon" sizes="192x192" href="/radio-192.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webradio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="container">
+        {{#ifeq route "home"}}
+        <a class="admin" href="/editstations">edit stations</a>
+        {{else}}
+        <a class="admin" href="/">home</a>
+        {{/ifeq}}
+        <div class="row mb">
+          <div class="col-4">
+            {{#ifeq playerStatus "play"}}
+            <a class="btn btn-block play select" href="/play"><i class="st-center">ON AIR</i></a>
+            {{else}}
+            <a class="btn btn-block play" href="/play"><i class="material-icons st-center">play_arrow</i></a>
+            {{/ifeq}}
+          </div>
+          <!--
+          <div class="col-4">
+            <a class="btn btn-block vol-up" href="/volume_up"><i class="material-icons st-center">volume_up</i></a>
+          </div>
+          <div class="col-4">
+            <a class="btn btn-block vol-down" href="/volume_down"><i class="material-icons st-center">volume_down</i></a>
+          </div>
+          -->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      {{{body}}}
+    </div>
+
+  </body>
+  <script>
+    let currentStation="{{currentStation}}"
+    let playerStatus="{{playerStatus}}"
+  </script>
+  <script src="/common.js"></script>
+  <script src="/client.js"></script>
+  {{#ifeq route "editstations"}}
+  <script src="/editstations.js"></script>
+  {{/ifeq}}
+
+</html>

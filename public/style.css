@@ -1,0 +1,284 @@
+body {
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+  padding-top: 75px;
+  background-image: linear-gradient(-120deg, #8bc9ab 0%, #fff 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  background-color: #343a40;
+}
+
+.btn {
+  display: inline;
+  text-decoration: none;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 4px solid transparent;
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  border-radius: .50rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.play {
+  color: #fff;
+  background-color: #8bc9ab;
+  border-color: #8bc9ab;
+}
+
+.station {
+  background-color: #8bc9ab;
+  border-color: #8bc9ab;
+  border: 3px solid black;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+  width: 11rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admin {
+  color: white;
+  display: block;
+  position: absolute;
+  right: 1rem;
+}
+
+.select {
+  border: 3px solid #ff8800;
+}
+
+.btn-ok {
+  background-color: #8bc9ab;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #d66262;
+  color: white;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.col, .col-4 {
+  position: relative;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-4 {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.st-center {
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+.mb {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.editstations {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.editstations [contenteditable] {
+  font-size: 1.5rem;
+  padding: .25em .25em;
+  transition: padding .3s ease-in-out;
+}
+
+.editstations [contenteditable]:hover {
+  background: #fafafa;
+  outline: 2px solid #eee;
+  padding-left: .5em;
+}
+
+.editstations [contenteditable]:focus {
+  background: #efefef;
+  outline: 2px solid #8bc9ab;
+}
+
+.editstation {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 2px solid transparent;
+}
+
+.editstation .btn {
+  padding: 0;
+}
+
+.editstation div {
+  white-space: nowrap;
+  overflow: hidden;
+  align-self: center;
+}
+
+.editstation > div:first-child {
+  margin-right: 1rem;
+  width: 25%;
+}
+
+.editstation > div:nth-child(2) {
+  font-size: 1rem;
+  width: 75%;
+  padding: 0.5em 0;
+}
+
+.editstation:nth-child(2n+1) {
+  background-color: #8bc9ab;
+  border: 2px solid #8bc9ab;
+}
+
+
+.editstation:last-child {
+  background-color: transparent;
+  border: 2px solid transparent;
+}
+
+[contenteditable=true]:empty:before {
+  content:attr(placeholder);
+  color: #888;
+  font-style: italic;
+}
+
+#shim {
+  z-index: 50;
+  opacity: .75;
+  filter: alpha(opacity=75);
+  -ms-filter: "alpha(opacity=75)";
+  -khtml-opacity: .75;
+  -moz-opacity: .75;
+  background: #B8B8B8;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+button {
+  outline: none;
+}
+
+.msgbox {
+  z-index: 100;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 7px #777;
+  -webkit-box-shadow: 3px 3px 7px #777;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-align: center;
+}
+
+.msgbox button {
+  min-width: 5rem;
+  margin-right: 1rem;
+}
+
+.msgbox button:last-child {
+  margin-right: 0;
+}
+
+.msgbox div {
+  margin-top: 1rem;
+}
+
+.msgbox span {
+  color: #8bc9ab;
+  font-weight: bold;
+}

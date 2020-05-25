@@ -1,0 +1,17 @@
+<div class="editstations">
+  {{#each stations as |station|}}
+  <div draggable="true" data-id="{{station.id}}" data-pos="{{station.pos}}" data-name="{{station.name}}" class="editstation">
+    <div data-arg="name" title="{{station.name}}" contenteditable="true">{{station.name}}</div>
+    <div data-arg="url" title="{{station.url}}" contenteditable="true">{{station.url}}</div>
+    <button class="btn btn-move material-icons st-center" title="move station">reorder</button>
+    <button class="btn btn-delete material-icons st-center" title="delete station">delete</button>
+  </div>
+  {{/each}}
+  <div data-id="" data-pos="" class="editstation">
+    <div data-arg="name" title="" placeholder="new station..." contenteditable="true"></div>
+    <div data-arg="url" title="" placeholder="url..." contenteditable="true"></div>
+    <button class="btn btn-move material-icons st-center" title="move station">reorder</button>
+    <button class="btn btn-delete material-icons st-center" title="delete station">delete</button>
+  </div>
+</div>
+<div id="shim"></div>
