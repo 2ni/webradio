@@ -26,8 +26,8 @@ listen to http://<ip_of_your_rpi>:3001
 
 
 ### optionally setup local hostname
-- set eg http://radio to your rpi on your router
-- setup nginx with docker on your rpi
+- set eg http://radio to point to your rpi on your router, eg with a static route
+- use nginx with docker on your rpi
 ```
 cd nginx
 docker-compose up
