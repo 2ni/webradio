@@ -9,6 +9,22 @@ docker-compose up
 connect to <ip of rpi>:3001
 ```
 
+### run directly
+
+setup:
+```
+sudo apt-get install omxplayer node npm
+npm install
+npm patchomx
+```
+
+start application:
+```
+npm run start
+```
+listen to http://<ip_of_your_rpi>:3001
+
+
 ### optionally setup local hostname
 - set eg http://radio to your rpi on your router
 - setup nginx with docker on your rpi
@@ -17,12 +33,19 @@ cd nginx
 docker-compose up
 ```
 
-
 ### run in dev mode for debugging or development
+
+setup:
 ```
+sudo apt-get install omxplayer node npm
 npm install
-once: npm patchomx // patch the omxplayer to avoid crashes beacuse of osd use
+npm patchomx // patch the omxplayer to avoid crashes beacuse of osd use
+```
+
+start application:
+```
 npm run dev
 optionally: npm run ui
-output on port 3001 or 3002, eg http://mouette:3002/  # browsersync to restart server on changes
 ```
+
+listen to http://<ip_of_your_rpi>:3002 to use with browsersync :3001 else
