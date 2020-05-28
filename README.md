@@ -4,6 +4,8 @@ It supports a list of streams which can be administrated on a separate page (no 
 Connect your rpi to an amplifier run docker and you're good to go.
 
 ### run in docker
+! unfortunately omxplayer doesn't seem to work in docker for unknown reasons
+
 ```
 docker-compose up
 connect to <ip of rpi>:3001
@@ -18,9 +20,17 @@ npm install
 npm patchomx
 ```
 
-start application:
+start application manually:
 ```
 npm run start
+```
+
+start application with [systemctl](https://stackoverflow.com/questions/4018154/how-do-i-run-a-node-js-app-as-a-background-service)
+```
+sudo cp webradio.service /etc/systemd/system/
+sudo systemctl [start|stop] webradio
+sudo systemctl enable webradio # to enable  on boot
+journalctl -u webradio # for logging output
 ```
 listen to http://<ip_of_your_rpi>:3001
 
