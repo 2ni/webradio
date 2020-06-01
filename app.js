@@ -110,6 +110,7 @@ app.get('/stop', (req, res) => {
 })
 
 app.get('/station/:id', (req, res) => {
+  const id = req.params.id
   db.set('selectedStation', req.params.id).write()
   let station = db.get('stations').find({id: req.params.id}).value()
   console.log('switching to ' + station.id)
@@ -117,7 +118,12 @@ app.get('/station/:id', (req, res) => {
     console.log('playing ' + station.name + ' (' + station.url  + ')')
     req.app.locals.player.newSource(station.url)
   }
-  res.json({select: station.id})
+  res.json(station)
+})
+
+app.get('/stations', (req, res) => {
+  let stations = db.get('stations').sortBy('pos').value()
+  res.json(stations)
 })
 
 /*
