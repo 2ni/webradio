@@ -17,7 +17,7 @@ setup:
 ```
 sudo apt-get install omxplayer node npm
 npm install
-npm patchomx
+npm run patchomx
 ```
 
 start application manually:
