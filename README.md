@@ -1,3 +1,10 @@
+### todo
+- create our own docker image based on 
+```
+FROM balenalib/raspberrypi3:latest
+RUN install_packages omxplayer
+```
+
 ### about
 This is a simple webradio player for a raspberry pi written in expressjs and vanilla javascript based on omxplayer.
 It supports a list of streams which can be administrated on a separate page (no login) and played stopped by the control button.
