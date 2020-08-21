@@ -1,5 +1,5 @@
 ### todo
-- create our own docker image based on 
+- create our own docker image based on [balena](https://www.balena.io/docs/reference/base-images/base-images/)
 ```
 FROM balenalib/raspberrypi3:latest
 RUN install_packages omxplayer
